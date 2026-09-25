@@ -30,14 +30,14 @@
         "icon": {
           "light": "./images/actus.svg",
           "dark": "./images/actus.svg"
-        },
-        "grammars": [
-          {
-            "language": "actus",
-            "scopeName": "source.actus",
-            "path": "./syntaxes/actus.tmLanguage.json"
-          }
-        ]
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "actus",
+        "scopeName": "source.actus",
+        "path": "./syntaxes/actus.tmLanguage.json"
       }
     ],
     "configuration": {
