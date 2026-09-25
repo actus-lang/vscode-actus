@@ -1,0 +1,63 @@
+{
+  "name": "Actus",
+  "scopeName": "source.actus",
+  "fileTypes": ["act"],
+  "patterns": [
+    {"include": "#comments"},
+    {"include": "#strings"},
+    {"include": "#keywords"},
+    {"include": "#roles"},
+    {"include": "#types"},
+    {"include": "#declarations"},
+    {"include": "#numbers"},
+    {"include": "#operators"}
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {"name": "comment.line.documentation.actus", "match": "///.*$"},
+        {"name": "comment.line.actus", "match": "//.*$"}
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.actus",
+      "begin": "\"",
+      "end": "\"",
+      "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.actus"}},
+      "endCaptures": {"0": {"name": "punctuation.definition.string.end.actus"}},
+      "patterns": [{"name": "constant.character.escape.actus", "match": "\\\\."}]
+    },
+    "keywords": {
+      "patterns": [
+        {"name": "keyword.declaration.actus", "match": "\\b(?:verb|struct|enum|role|perform)\\b"},
+        {"name": "keyword.control.actus", "match": "\\b(?:case|if|else|while|for|in|return|break|continue)\\b"},
+        {"name": "keyword.module.actus", "match": "\\b(?:import|open|meta)\\b"},
+        {"name": "keyword.other.actus", "match": "\\b(?:unsafe|extern)\\b"}
+      ]
+    },
+    "roles": {
+      "patterns": [
+        {"name": "storage.modifier.role.erg.actus", "match": "\\berg\\b"},
+        {"name": "storage.modifier.role.abs.actus", "match": "\\babs\\b"},
+        {"name": "storage.modifier.role.dat.actus", "match": "\\bdat\\b"},
+        {"name": "keyword.other.dynamic.actus", "match": "\\bdynamic\\b"},
+        {"name": "variable.language.self.actus", "match": "\\bself\\b"}
+      ]
+    },
+    "types": {
+      "patterns": [
+        {"name": "support.type.builtin.actus", "match": "\\b(?:Bool|Char|String|Int|I8|I16|I32|I64|U8|U16|U32|U64|Usize|F32|F64|Unit|Option|Result|Buffer)\\b"},
+        {"name": "entity.name.type.actus", "match": "\\b[A-Z][A-Za-z0-9_]*\\b"}
+      ]
+    },
+    "declarations": {
+      "patterns": [
+        {"name": "entity.name.function.actus", "match": "(?<=\\bverb\\s)[A-Za-z_][A-Za-z0-9_]*"},
+        {"name": "entity.name.function.actus", "match": "(?<=\\bperform\\s)[A-Za-z_][A-Za-z0-9_]*"},
+        {"name": "variable.parameter.actus", "match": "\\b(?:erg|abs|dat)\\s+[A-Za-z_][A-Za-z0-9_]*\\s*:"}
+      ]
+    },
+    "numbers": {"patterns": [{"name": "constant.numeric.actus", "match": "\\b(?:[0-9]+(?:\\.[0-9]+)?)\\b"}]},
+    "operators": {"patterns": [{"name": "keyword.operator.actus", "match": "=>|->|==|!=|<=|>=|[+*/<>=!-]"}]}
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "vscode-actus",
+  "displayName": "Actus Language Support",
+  "description": "Syntax highlighting and LSP support for the Actus programming language.",
+  "version": "0.1.0",
+  "publisher": "actus-lang",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:actus"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "actus",
+        "aliases": ["Actus", "actus"],
+        "extensions": [".act"],
+        "configuration": "./language-configuration.json",
+        "grammars": [
+          {
+            "language": "actus",
+            "scopeName": "source.actus",
+            "path": "./syntaxes/actus.tmLanguage.json"
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "Actus",
+      "properties": {
+        "actus.lsp.path": {
+          "type": "string",
+          "default": "actus",
+          "description": "Path to the Actus compiler binary. Defaults to actus from PATH, then local debug builds."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc -p ./",
+    "compile": "tsc -p ./",
+    "check": "tsc -p ./ --noEmit"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.6.0"
+  }
+}
