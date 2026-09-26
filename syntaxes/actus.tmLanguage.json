@@ -42,7 +42,7 @@
       "patterns": [
         {
           "name": "keyword.control.actus",
-          "match": "\\b(?:verb|perform|case|return|import|open|drop|if|else|while|for)\\b"
+          "match": "\\b(?:verb|perform|case|return|import|open|drop|loop|break|continue|if)\\b"
         },
         {
           "name": "storage.type.actus",
@@ -50,7 +50,7 @@
         },
         {
           "name": "storage.modifier.actus",
-          "match": "\\b(?:erg|abs|dat|dynamic|meta)\\b"
+          "match": "\\b(?:erg|abs|dat|ins|dynamic|meta|unsafe)\\b"
         },
         {
           "name": "variable.language.self.actus",
@@ -60,6 +60,10 @@
     },
     "types": {
       "patterns": [
+        {
+          "name": "support.type.builtin.actus",
+          "match": "\\b(?:Bool|Char|String|Int|I8|I16|I32|I64|U8|U16|U32|U64|Usize|F32|F64|Unit|Option|Result|Buffer)\\b"
+        },
         {
           "name": "entity.name.type.actus",
           "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
@@ -87,6 +91,14 @@
         {
           "name": "keyword.operator.actus",
           "match": "=>|->|==|!=|<=|>=|[+*/<>=!-]"
+        },
+        {
+          "name": "punctuation.bracket.actus",
+          "match": "[{}()\\[\\]]"
+        },
+        {
+          "name": "punctuation.delimiter.actus",
+          "match": "[,;:.]"
         }
       ]
     }
