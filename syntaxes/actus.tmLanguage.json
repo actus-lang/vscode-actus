@@ -7,6 +7,7 @@
     {"include": "#docstrings"},
     {"include": "#strings"},
     {"include": "#keywords"},
+    {"include": "#packNames"},
     {"include": "#types"},
     {"include": "#functions"},
     {"include": "#numbers"},
@@ -54,11 +55,19 @@
       "patterns": [
         {
           "name": "keyword.control.actus",
-          "match": "\\b(?:verb|perform|case|return|import|open|drop|loop|break|continue|if|extern)\\b"
+          "match": "\\b(?:verb|perform|case|return|import|open|drop|loop|break|continue|if|extern|at)\\b"
         },
         {
           "name": "storage.type.actus",
-          "match": "\\b(?:struct|enum|role)\\b"
+          "match": "\\b(?:struct|enum|role|pack)\\b"
+        },
+        {
+          "name": "storage.modifier.pack.actus",
+          "match": "\\b(?:layout|fields|storage)\\b"
+        },
+        {
+          "name": "storage.modifier.endianness.actus",
+          "match": "\\b(?:little|big)\\b"
         },
         {"name": "storage.modifier.ownership.erg.actus", "match": "\\berg\\b"},
         {"name": "storage.modifier.ownership.abs.actus", "match": "\\babs\\b"},
@@ -71,6 +80,14 @@
         {
           "name": "variable.language.self.actus",
           "match": "\\bself\\b"
+        }
+      ]
+    },
+    "packNames": {
+      "patterns": [
+        {
+          "name": "entity.name.type.pack.actus",
+          "match": "(?<=\\bpack\\s)[A-Z][a-zA-Z0-9_]*"
         }
       ]
     },
