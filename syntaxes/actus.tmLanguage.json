@@ -54,15 +54,19 @@
       "patterns": [
         {
           "name": "keyword.control.actus",
-          "match": "\\b(?:verb|perform|case|return|import|open|drop|loop|break|continue|if)\\b"
+          "match": "\\b(?:verb|perform|case|return|import|open|drop|loop|break|continue|if|extern)\\b"
         },
         {
           "name": "storage.type.actus",
           "match": "\\b(?:struct|enum|role)\\b"
         },
+        {"name": "storage.modifier.ownership.erg.actus", "match": "\\berg\\b"},
+        {"name": "storage.modifier.ownership.abs.actus", "match": "\\babs\\b"},
+        {"name": "storage.modifier.ownership.dat.actus", "match": "\\bdat\\b"},
+        {"name": "storage.modifier.ownership.ins.actus", "match": "\\bins\\b"},
         {
           "name": "storage.modifier.actus",
-          "match": "\\b(?:erg|abs|dat|ins|dynamic|meta|unsafe)\\b"
+          "match": "\\b(?:dynamic|meta|unsafe)\\b"
         },
         {
           "name": "variable.language.self.actus",
@@ -74,7 +78,7 @@
       "patterns": [
         {
           "name": "support.type.builtin.actus",
-          "match": "\\b(?:Bool|Char|String|Int|I8|I16|I32|I64|U8|U16|U32|U64|Usize|F32|F64|Unit|Option|Result|Buffer)\\b"
+          "match": "\\b(?:Bool|Char|String|Int|I8|I16|I32|I64|U8|U16|U32|U64|Usize|F32|F64|Unit|Option|Result|Buffer|Void|[ui](?:[1-9]|[1-9][0-9]|1[01][0-9]|12[0-8])|f32|f64)\\b"
         },
         {
           "name": "entity.name.type.actus",
@@ -84,6 +88,10 @@
     },
     "functions": {
       "patterns": [
+        {
+          "name": "constant.numeric.hex.actus",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        },
         {
           "name": "entity.name.function.actus",
           "match": "\\b[a-z_][a-zA-Z0-9_]*(?=\\s*\\()"
