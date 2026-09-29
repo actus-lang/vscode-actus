@@ -6,7 +6,8 @@ The extension provides:
 
 - `.act` file association and Actus language metadata;
 - TextMate syntax highlighting for declarations, roles, control flow,
-  ownership markers, types, operators, strings, numbers, and comments;
+  ownership markers, types, arithmetic, relational, equality, logical,
+  bitwise, and shift operators, strings, numbers, and comments;
 - the Actus file icon in the Explorer;
 - LSP diagnostics, hover information, go-to-definition, and formatting;
 - configuration for selecting the `actus` compiler binary.

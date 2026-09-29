@@ -127,7 +127,7 @@
       "patterns": [
         {
           "name": "keyword.operator.actus",
-          "match": "=>|->|==|!=|<=|>=|[+*/<>=!-]"
+          "match": "=>|->|<<|>>|&&|\\|\\||==|!=|<=|>=|%|~|[+*/<>=!&|^-]"
         },
         {
           "name": "punctuation.bracket.actus",
