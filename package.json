@@ -40,6 +40,18 @@
         "path": "./syntaxes/actus.tmLanguage.json"
       }
     ],
+    "configurationDefaults": {
+      "[actus]": {
+        "editor.semanticTokenColorCustomizations": {
+          "rules": {
+            "*.inactive-target": {
+              "foreground": "#808080",
+              "fontStyle": "italic"
+            }
+          }
+        }
+      }
+    },
     "configuration": {
       "title": "Actus",
       "properties": {
@@ -47,6 +59,11 @@
           "type": "string",
           "default": "actus",
           "description": "Path to the Actus compiler binary. Defaults to actus from PATH, then local debug builds."
+        },
+        "actus.target": {
+          "type": "string",
+          "default": "host",
+          "description": "Target triple used by the Actus language server for target filtering and inactive-code highlighting."
         }
       }
     }

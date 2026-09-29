@@ -16,6 +16,7 @@ export function activate(context: vscode.ExtensionContext): void {
     .get<string>('lsp.path', 'actus');
   const command = resolveActusCommand(configuredPath, context);
   const workspaceRoot = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
+  const target = vscode.workspace.getConfiguration('actus').get<string>('target', 'host');
   const output = vscode.window.createOutputChannel('Actus Language Server');
   context.subscriptions.push(output);
   const serverOptions: ServerOptions = async () => {
@@ -31,6 +32,7 @@ export function activate(context: vscode.ExtensionContext): void {
   };
   const clientOptions: LanguageClientOptions = {
     documentSelector: [{ scheme: 'file', language: 'actus' }],
+    initializationOptions: { target },
     outputChannelName: 'Actus Language Server',
     synchronize: {
       configurationSection: 'actus',
