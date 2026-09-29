@@ -18,7 +18,7 @@
     "vscode": "^1.85.0"
   },
   "categories": ["Programming Languages"],
-  "activationEvents": ["onLanguage:actus"],
+  "activationEvents": ["onLanguage:actus", "onStartupFinished"],
   "main": "./out/extension.js",
   "contributes": {
     "languages": [
@@ -55,7 +55,7 @@
     "build": "tsc -p ./",
     "compile": "tsc -p ./",
     "check": "tsc -p ./ --noEmit",
-    "package": "vsce package --no-dependencies"
+    "package": "vsce package"
   },
   "dependencies": {
     "vscode-languageclient": "^9.0.1"

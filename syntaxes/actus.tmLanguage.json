@@ -55,7 +55,7 @@
       "patterns": [
         {
           "name": "keyword.control.actus",
-          "match": "\\b(?:verb|perform|case|return|import|open|drop|loop|break|continue|if|extern|at)\\b"
+          "match": "\\b(?:verb|perform|case|return|import|open|drop|loop|break|continue|if|extern|at|as)\\b"
         },
         {
           "name": "storage.type.actus",
@@ -95,7 +95,7 @@
       "patterns": [
         {
           "name": "support.type.builtin.actus",
-          "match": "\\b(?:Bool|Char|String|Int|I8|I16|I32|I64|U8|U16|U32|U64|Usize|F32|F64|Unit|Option|Result|Buffer|Void|[ui](?:[1-9]|[1-9][0-9]|1[01][0-9]|12[0-8])|f32|f64)\\b"
+          "match": "\\b(?:Bool|Char|String|Int|I8|I16|I32|I64|U8|U16|U32|U64|Usize|F32|F64|Unit|Option|Result|Buffer|Array|Void|[ui](?:[1-9]|[1-9][0-9]|1[01][0-9]|12[0-8])|f32|f64)\\b"
         },
         {
           "name": "entity.name.type.actus",
